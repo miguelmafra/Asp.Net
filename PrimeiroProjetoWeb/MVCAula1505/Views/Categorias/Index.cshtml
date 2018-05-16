@@ -1,0 +1,18 @@
+﻿@using MVCAula1505.Models;
+
+@{
+    ViewBag.Title = "Lista de Categorias";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (Categoria categ in ViewBag.MinhasCategorias)
+{
+    <p>@categ.CategoriaID</p>
+    <p>@categ.Nome</p>
+    <p>@categ.Ativo</p>
+    <br />
+    <br />
+
+}
+

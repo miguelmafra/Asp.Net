@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MVCAula1505")]
+[assembly: AssemblyTitle("Aula1505MVC")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MVCAula1505")]
+[assembly: AssemblyProduct("Aula1505MVC")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("029d69e6-05b6-4f8a-ac35-e0beb9b0f89f")]
+[assembly: Guid("d2b8f774-e7a9-4764-9015-0c870ed84f46")]
 
 // Version information for an assembly consists of the following four values:
 //
