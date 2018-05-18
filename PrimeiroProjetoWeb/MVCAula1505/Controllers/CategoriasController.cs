@@ -28,6 +28,22 @@ namespace MVCAula1505.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Formulario(string nome, string descricao, bool ativo, string exemplotexto)
+        {
+            return View();
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Categoria categoria)
+        {
+            return View(categoria);
+        }
     }
+
 
 }

@@ -7,6 +7,18 @@
 
 @using (Html.BeginForm())
 {
-
+    @Html.TextBox("nome")
+    <br />
+    <br />
+    @Html.TextBox("descricao")
+    <br />
+    <br />
+    @Html.CheckBox("ativo")
+    <br />
+    <br />
+    @Html.TextArea("exemplotexto")
+    <br />
+    <br />
+    <input type="submit" value="Enviar" />
 }
 
