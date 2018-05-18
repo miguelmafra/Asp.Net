@@ -14,6 +14,11 @@ namespace MVCAula1505.Controllers
         {
             List<Categoria> categorias = new List<Categoria>();
 
+            new Categoria()
+            {
+                Nome = "Casa"
+            };
+
             categorias.Add(new Categoria() {Nome = "Casa" });
             categorias.Add(new Categoria() { Nome = "Carro" });
             categorias.Add(new Categoria() { Nome = "Trabalho" });
@@ -42,6 +47,26 @@ namespace MVCAula1505.Controllers
         public ActionResult Create(Categoria categoria)
         {
             return View(categoria);
+        }
+
+        public ActionResult Index2()
+        {
+            List<Categoria> categorias = new List<Categoria>();
+
+            new Categoria()
+            {
+                Nome = "Casa"
+            };
+
+            categorias.Add(new Categoria() { Nome = "Casa" });
+            categorias.Add(new Categoria() { Nome = "Carro" });
+            categorias.Add(new Categoria() { Nome = "Trabalho" });
+            categorias.Add(new Categoria() { Nome = "Família" });
+
+            ViewBag.MinhasCategorias = categorias;
+
+
+            return View(categorias);
         }
     }
 

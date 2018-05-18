@@ -8,11 +8,32 @@
 
 @using (Html.BeginForm())
 {
-    @Html.TextBoxFor(m => m.Nome)
+    @*formulario v1 (usando model);
+        @Html.TextBoxFor(m => m.Nome)
+        <br />
+        <br />
+        @Html.CheckBoxFor(m => m.Ativo)
+        <br />
+        <br />
+        <input type="submit" value="Salvar" />*@
+
+    //Formulario v2 (usando model)
+    @Html.DisplayNameFor(m => m.Nome)
+    @Html.EditorFor(m => m.Nome)
     <br />
     <br />
-    @Html.CheckBoxFor(m => m.Ativo)
+    @Html.DisplayNameFor(m => m.Ativo)
+    @Html.EditorFor(m => m.Ativo)
     <br />
     <br />
+
     <input type="submit" value="Salvar" />
+
+
+//Formulario v3 (usando model, form completo)
+//@Html.EditorForModel()
+//<input type="submit" value="Salvar" />
+
+
+
 }
