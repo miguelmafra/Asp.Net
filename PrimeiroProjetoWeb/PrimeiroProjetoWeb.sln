@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCAula1505", "MVCAula1505\MVCAula1505.csproj", "{D86B9ADC-73E6-4CC5-A56E-82211CC4F20F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula2205_Entity", "Aula2205_Entity\Aula2205_Entity.csproj", "{B86DCB85-0A94-4C32-BF1D-3693C8C52BE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D86B9ADC-73E6-4CC5-A56E-82211CC4F20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D86B9ADC-73E6-4CC5-A56E-82211CC4F20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D86B9ADC-73E6-4CC5-A56E-82211CC4F20F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86DCB85-0A94-4C32-BF1D-3693C8C52BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86DCB85-0A94-4C32-BF1D-3693C8C52BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86DCB85-0A94-4C32-BF1D-3693C8C52BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86DCB85-0A94-4C32-BF1D-3693C8C52BE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
