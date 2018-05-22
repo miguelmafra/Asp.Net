@@ -12,6 +12,7 @@ namespace MVCAula1505.Models
         public int CategoriaID { get; set; }
 
         [Display(Name ="Titulo")]
+        [Required(ErrorMessage ="Imploro com todo fervor que preencha esse campo obritaório")]
         public string Nome { get; set; }
 
         public bool Ativo { get; set; }
