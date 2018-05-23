@@ -6,7 +6,12 @@ namespace Aula2205_Entity.Models.DAL
     {
         public MeuContexto() : base("strConn")
         {
-
+            //<DropCreateDatabaseAlways>
+            //<DropCreateDatabaseIfModelChanges>
+            //<MigrateDatabaseToLatestVersion>
+            Database.SetInitializer<MeuContexto>(new DropCreateDatabaseIfModelChanges<MeuContexto>());
+            
         }
+       
     }
 }
