@@ -26,9 +26,19 @@ namespace Aula2205_Entity.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Usuario usuario)
+        [ValidateAntiForgeryToken]
+       public ActionResult Create(Usuario usuario)
         {
-            Return View(usuario);
+            if (ModelState.IsValid)
+            {
+                MeuContexto contexto = new MeuContexto();
+                contexto.Usuarios.Add(usuario);
+                contexto.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(usuario);
         }
+
     }
+  
 }
