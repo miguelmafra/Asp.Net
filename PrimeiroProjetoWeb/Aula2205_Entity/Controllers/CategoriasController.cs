@@ -9,16 +9,17 @@ using System.Web.Mvc;
 
 namespace Aula2205_Entity.Controllers
 {
-    public class UsuariosController : Controller
+    public class CategoriasController : Controller
     {
-        // GET: Usuarios
+        // GET: Categorias
         public ActionResult Index()
         {
             MeuContexto contexto = new MeuContexto();
 
-            List<Usuario> usuarios = contexto.Usuarios.ToList();
+            List<Categoria> categorias = contexto.Categorias.ToList();
 
-            return View(usuarios);
+            return View(categorias);
+       
         }
 
         public ActionResult Create()
@@ -26,39 +27,39 @@ namespace Aula2205_Entity.Controllers
             return View();
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-       public ActionResult Create(Usuario usuario)
+        public ActionResult Create(Categoria categoria)
         {
             if (ModelState.IsValid)
             {
                 MeuContexto contexto = new MeuContexto();
-                contexto.Usuarios.Add(usuario);
+                contexto.Categorias.Add(categoria);
                 contexto.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usuario);
+            return View(categoria);
         }
 
         public ActionResult Details(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
             MeuContexto contexto = new MeuContexto();
 
-            Usuario usu = contexto.Usuarios.Find(id);
+            Categoria cat = contexto.Categorias.Find(id);
 
-            if(usu == null)
+            if (cat == null)
             {
                 return HttpNotFound();
             }
 
-            return View(usu);
+            return View(cat);
         }
-
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -68,29 +69,28 @@ namespace Aula2205_Entity.Controllers
 
             MeuContexto contexto = new MeuContexto();
 
-            Usuario usu = contexto.Usuarios.Find(id);
+            Categoria cat = contexto.Categorias.Find(id);
 
-            if (usu == null)
+            if (cat == null)
             {
                 return HttpNotFound();
             }
 
-            return View(usu);
+            return View(cat);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit (Usuario usu)
+        public ActionResult Edit(Categoria cat)
         {
             if (ModelState.IsValid)
             {
                 MeuContexto contexto = new MeuContexto();
-                contexto.Entry(usu).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(cat).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usu);
+            return View(cat);
         }
-        
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -100,13 +100,13 @@ namespace Aula2205_Entity.Controllers
 
             MeuContexto contexto = new MeuContexto();
 
-            Usuario usu = contexto.Usuarios.Find(id);
-            if (usu == null)
+            Categoria cat = contexto.Categorias.Find(id);
+            if (cat == null)
             {
                 return HttpNotFound();
             }
 
-            return View(usu);
+            return View(cat);
 
         }
 
@@ -116,12 +116,11 @@ namespace Aula2205_Entity.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             MeuContexto contexto = new MeuContexto();
-            Usuario usu = contexto.Usuarios.Find(id);
+            Categoria cat = contexto.Categorias.Find(id);
 
-            contexto.Usuarios.Remove(usu);
+            contexto.Categorias.Remove(cat);
             contexto.SaveChanges();
             return RedirectToAction("Index");
         }
     }
-  
 }

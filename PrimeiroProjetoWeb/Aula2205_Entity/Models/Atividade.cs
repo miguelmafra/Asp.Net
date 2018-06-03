@@ -17,7 +17,7 @@ namespace Aula2205_Entity.Models.DAL
         public string Descricao { get; set; }
 
         public bool Ativo { get; set; }
-
+        
         public int CategoriaID { get; set; }
 
         public virtual Categoria _Categoria { get; set; }

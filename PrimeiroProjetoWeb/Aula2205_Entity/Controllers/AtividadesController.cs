@@ -1,5 +1,4 @@
-﻿using Aula2205_Entity.Models;
-using Aula2205_Entity.Models.DAL;
+﻿using Aula2205_Entity.Models.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +8,17 @@ using System.Web.Mvc;
 
 namespace Aula2205_Entity.Controllers
 {
-    public class UsuariosController : Controller
+    public class AtividadesController : Controller
     {
-        // GET: Usuarios
+        // GET: Atividades
         public ActionResult Index()
         {
             MeuContexto contexto = new MeuContexto();
 
-            List<Usuario> usuarios = contexto.Usuarios.ToList();
+            List<Atividade> atividades = contexto.Atividades.ToList();
 
-            return View(usuarios);
+            return View(atividades);
+
         }
 
         public ActionResult Create()
@@ -26,39 +26,39 @@ namespace Aula2205_Entity.Controllers
             return View();
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-       public ActionResult Create(Usuario usuario)
+        public ActionResult Create(Atividade atividade)
         {
             if (ModelState.IsValid)
             {
                 MeuContexto contexto = new MeuContexto();
-                contexto.Usuarios.Add(usuario);
+                contexto.Atividades.Add(atividade);
                 contexto.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usuario);
+            return View(atividade);
         }
 
         public ActionResult Details(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
             MeuContexto contexto = new MeuContexto();
 
-            Usuario usu = contexto.Usuarios.Find(id);
+            Atividade ati = contexto.Atividades.Find(id);
 
-            if(usu == null)
+            if (ati == null)
             {
                 return HttpNotFound();
             }
 
-            return View(usu);
+            return View(ati);
         }
-
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -68,29 +68,28 @@ namespace Aula2205_Entity.Controllers
 
             MeuContexto contexto = new MeuContexto();
 
-            Usuario usu = contexto.Usuarios.Find(id);
+            Atividade ati = contexto.Atividades.Find(id);
 
-            if (usu == null)
+            if (ati == null)
             {
                 return HttpNotFound();
             }
 
-            return View(usu);
+            return View(ati);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit (Usuario usu)
+        public ActionResult Edit(Atividade ati)
         {
             if (ModelState.IsValid)
             {
                 MeuContexto contexto = new MeuContexto();
-                contexto.Entry(usu).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(ati).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usu);
+            return View(ati);
         }
-        
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -100,13 +99,13 @@ namespace Aula2205_Entity.Controllers
 
             MeuContexto contexto = new MeuContexto();
 
-            Usuario usu = contexto.Usuarios.Find(id);
-            if (usu == null)
+            Atividade ati = contexto.Atividades.Find(id);
+            if (ati == null)
             {
                 return HttpNotFound();
             }
 
-            return View(usu);
+            return View(ati);
 
         }
 
@@ -116,12 +115,11 @@ namespace Aula2205_Entity.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             MeuContexto contexto = new MeuContexto();
-            Usuario usu = contexto.Usuarios.Find(id);
+            Atividade ati = contexto.Atividades.Find(id);
 
-            contexto.Usuarios.Remove(usu);
+            contexto.Atividades.Remove(ati);
             contexto.SaveChanges();
             return RedirectToAction("Index");
         }
     }
-  
 }
